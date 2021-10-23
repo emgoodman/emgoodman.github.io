@@ -1,36 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Emily's Lab 1 Webpage!!</title>
-    <style>
-    body {background-color: rgb(250, 235, 215);
-          }
-
-          h1, h2, h3, h4 { font-family:sans-serif;
-          font-size: 20px; color: blue; text-align: center}
-
-          p { font-family: fantasy;}
-
-/*create link feature*/
-          #story
-          a:link, p.note:visited {
-          background-color: white;
-          color: black;
-          border: 2px solid lightblue;
-          padding: 10px 20px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-        }
-          #story
-        a:hover, a:active {
-          background-color: lightblue;
-          color: white;
-        }
-
-/*page layout*/
+<head>
+<style>
 * {
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
 }
 
 /* Header/Blog Title */
@@ -125,34 +104,61 @@
     width: 100%;
   }
 }
-
-
-
-    </style>
-  </head>
-
+</style>
+</head>
+<body>
 
 <div class="header">
-  <h1>Emily's First CSS Webpage</h1>
-  <p>Hi, I'm Emily- first of her name, seeker of adventures, lover of chocolate, writer of words, singer of showers and empty rooms. My favorite Pokemon is dogs.</p>
+  <h1>My Website</h1>
+  <p>Resize the browser window to see the effect.</p>
+</div>
+
+<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
 </div>
 
 <div class="row">
-  <div class="column side">
-    <h2>About Me</h2>
-    <p>In my spare time I like to travel and go backpacking. I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts already. I also enjoy music, reading, movies, and playing video games.</p>
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Dec 7, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
+    <div class="card">
+      <h2>TITLE HEADING</h2>
+      <h5>Title description, Sep 2, 2017</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    </div>
   </div>
-
-  <div class="column middle">
-    <h2>Main Content</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
-  </div>
-
-  <div class="column side">
-    <h2>Side</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
   </div>
 </div>
 
+<div class="footer">
+  <h2>Footer</h2>
+</div>
+
+</body>
 </html>
