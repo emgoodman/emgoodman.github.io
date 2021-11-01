@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>First CSS!</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+{text-align: center}
+
+body {
+  margin: 0;
+}
+
+h2, h3 {background-color: #FAF0E6;
+}
+
+h1 { font-family:book antiqua;
+font-size: 40px; color: black; text-align: center}
+
+h3 { font-family:book antiqua;
+font-size: 30px; color: #404040; text-align: center;}
+
+h2 { font-family:book antiqua;
+font-size: 30px; color: #404040; text-align: center}
+
+p, ol { font-family: book antiqua;}
+
+
+/* Style the header */
+.header {
+  background-color: #5F9EA0;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/*create link feature*/
+          .footer
+          a:link, p.note:visited {
+          background-color: white;
+          color: black;
+          border: 2px solid lightblue;
+          padding: 5px 10px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block; overflow: hidden;
+        }
+          .footer
+        a:hover, a:active {
+          background-color: lightblue;
+          color: white ;
+        }
+
+
+/* Style the footer */
+.footer {
+  background-color: #5F9EA0;
+  padding: 20px;
+  text-align: center; overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>My First JavaScript Webpage</h1>
+  <p>Hi, I'm Emily- first of her name, seeker of adventures, lover of chocolate, writer of words, singer of showers and empty rooms. My favorite Pokemon is dogs.
+
+</p>
+</div>
+
+
+
+<div class="row">
+  <div class="column side">
+    <h2>My Favorite Types of Potatoes</h2>
+    <ol>
+      <li>Au Gratin</li>
+      <li>Mashed</li>
+      <li>Waffle Fries</li>
+      <li>Twice Baked</li>
+      <li>Wedges</li>
+    </ol>
+  </div>
+
+  <div class="column middle">
+    <h2>About Me</h2>
+<p>
+  <script>
+    document.write("  In my spare time I like to travel and go backpacking. I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts. I also enjoy music, reading, movies, and playing video games.<br>")
+  </script>  
+
+  </p>  </div>
+
+
+
+  <div class="column side">
+    <h3>I took this photo at Sky Pond, one of my favorite spots in Colorado's Rocky Mountains. </h3>
+    <p>  Click the image below for trail information </p>
+    <p>      <a href="http://www.rockymountainhikingtrails.com/sky-pond.htm">
+
+          <img src="images/comtn.jpg" alt= "Sky Pond" width="600" height="450" align="middle" /> </a> </p>
+
+    <p><a href="https://www.alltrails.com/parks/us/colorado/rocky-mountain-national-park">Here</a> is a website I love to use to find the best hikes in the region. </p>
+</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Here is something I've worked on recently</h2>
+
+  <a href="https://storymaps.arcgis.com/stories/3d885392c287414188c26e9a007c2bfc" target="_blank">My Story Map</a>
+
+</p>
+</div>
+
+</body>
+</html>
