@@ -123,8 +123,8 @@ p, ol { font-family: book antiqua;}
     <button id="about_me_button">Hover here for more about me!</button>
 
   <script>
-  $("#about_me_button").click( function() {
-           $("p#aboutme_p").hover();
+  $("#about_me_button").hover( function() {
+           $("p#aboutme_p").toggle();
      });
   </script>
   <p hidden id="aboutme_p">
