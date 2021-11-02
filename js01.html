@@ -105,8 +105,6 @@ p, ol { font-family: book antiqua;}
 </p>
 </div>
 
-
-
 <div class="row">
   <div class="column side">
     <h2>My Favorite Types of Potatoes</h2>
@@ -121,13 +119,17 @@ p, ol { font-family: book antiqua;}
 
   <div class="column middle">
     <h2>About Me</h2>
+    <p>I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts.</p>
 
-<p>
+    <button id="about_me_button">Hover here for more about me!</button>
+
   <script>
-
-    document.write("In my spare time I like to travel and go backpacking. I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts. I also enjoy music, reading, movies, and playing video games.<br>")
-    console.log("javascript is working woo!");
+  $("#about_me_button").click( function() {
+           $("p#aboutme_p").hover();
+     });
   </script>
+  <p hidden id="aboutme_p">
+In my spare time I like to travel and go backpacking.I also enjoy music, reading, movies, and playing video games.
   </p>
 </div>
 
