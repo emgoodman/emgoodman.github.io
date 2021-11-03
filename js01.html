@@ -117,21 +117,23 @@ p, ol { font-family: book antiqua;}
     </ol>
   </div>
 
-  <div id="column middle">
+  <div class="column middle">
     <h2>About Me</h2>
-
-    <p>
-      <script>
-      document.write("blah.")
-      I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts.</p>
-    </p>
 
     <button id="about_me_button">Hover here for more about me!</button>
 
-  <script>
-  $("#about_me_button").hover( function() {
-           $("p#aboutme_p").toggle();
-     });
+      <script>
+      $("button#about_me_buttom").hover( function() {
+        $("p#aboutme_p").toggle();
+      })
+      </script>
+
+      <p hidden id="aboutme_p">
+      I moved back to Brooklyn last year so I've been acclimating to the city life again and have been spending more time with my family. I'm looking forward to a longer autumn season, haunted hayrides, apple picking, and apple cider donuts. My friends in Colorado have never tasted cider donuts before. Yes, they are a thing. Yes, they are delicious. Get yourself some apple cider donuts.</p>
+    </p>
+
+
+
   </script>
 </div>
 
