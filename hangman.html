@@ -44,12 +44,13 @@
 
     var count = 0;
     for (l of word) {
-      if (1 == letter) {
+      if (l == letter) {
         blanks = blanks.substring(0, count) + letter + blanks.substring((count+1), blanks.length);
 
       }
-      count = count + 1
+      count = count + 1;
     }
+
     $("#word").html(blanks));
 
     if(! blanks.includes("-")) {
