@@ -13,6 +13,14 @@ padding: 40px;
 border: 2px solid #000000;
 }
 
+h2 {
+    border-style: dashed;
+    border-width: 3px;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-color: purple;
+}
+
   </style>
   <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
@@ -73,7 +81,8 @@ border: 2px solid #000000;
 
   <div id="game">
   <div id="messages"></div>
-    <p>The word to guess is <b><span id="word"></span></b>.</p>
+
+    <h1><p>The word to guess is <b><span id="word"></span></b>.</p></h1>
     <p> There are <span id="guesses"></span> guesses left.</p>
     <p><i>Click on a letter below to play!</i></p>
     <p>
