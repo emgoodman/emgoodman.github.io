@@ -31,7 +31,7 @@
     $("#"+letter).css("text-decoration", "line-through");
 
     if (guessed.includes(letter)) {
-      $("#messages").text("The letter " + "letter" + "has already been guessed.");
+      $("#messages").text("The letter "+letter + " has already been guessed.");
     } else {
       guessed = guessed + letter;
       guesses = guesses - 1;
