@@ -6,6 +6,13 @@
     p { font-size: 24pt;}
     #game { width: 50%; margin: auto; }
     #messages { color: red; }
+
+    body {
+margin: 0;
+padding: 0;
+border: 2px solid #000000;
+}
+
   </style>
   <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
@@ -63,11 +70,12 @@
   </script>
 </head>
 <body>
+
   <div id="game">
   <div id="messages"></div>
     <p>The word to guess is <b><span id="word"></span></b>.</p>
     <p> There are <span id="guesses"></span> guesses left.</p>
-    <p><i>Click on a letter below to play.</i></p>
+    <p><i>Click on a letter below to play!</i></p>
     <p>
       <span class="letter" id="a">a</span>
       <span class="letter" id="b">b</span>
