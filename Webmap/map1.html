@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My First Leaflet Map!</title>
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <!-- Add Leaflet JavaScript Library -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+  </head>
+  <body>
+
+    <div id="map" style="width: 705px; height: 375px"></div>
+
+    <script>
+      // Create a variable to hold map element, give initial settings to <map>
+      //put in the coordinates you want to show
+      var map = l.map('map', {center: [39.743218, -105.004], zoom: 14});
+
+      // add OpenStreetMap tile layer to map element
+      var defaultBase = l.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+                                    {attribution: '© OpenStreetMap' }).addTo(map);
+
+
+
+    </script>
+  </body>
+</html>
