@@ -69,6 +69,7 @@
 
 // create variables for overlays
       var buildings;
+      var bikes;
 
       //Load a geojson files from an external file
       $.getJSON("buildings.json", function(data) {
@@ -82,6 +83,15 @@
           }
         }
       );
+
+      //add bike geoson layer
+      $.getJSON("BikeLayer.json",function(data){
+     // add GeoJSON layer to the map once the file is loaded
+	    bikes = L.geoJson(data).addTo(map);
+});
+
+
+
       // Add Layer menu for buildings
       layerMenu.addOverlay(buildings,"Buildings")
       });
