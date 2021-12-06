@@ -60,7 +60,14 @@
       //Load a geojson file from an external file
       $.getJSON("buildings.json"), function(data) {
         // add geojson layer to map after file is loaded
-        L.geoJason(data).addTo(map);
+        L.geoJason(data, {
+          onEachFeature: function (feature, layer) {
+            layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
+                            "<br>Building Height: " + feature.properties.BLDG_HEIGHT +
+                            "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
+          }
+        }
+        ).addTo(map);
       });
 
 
