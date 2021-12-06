@@ -24,7 +24,6 @@
       var defaultBase = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
                                     {attribution: '© OpenStreetMap' }).addTo(map);
 
-      var basemaps = { "Default Basemap:", defaultBase };
       var overlaymaps = { };
       var layerMenu = L.control.layers(basemaps,overlapmaps).addTo(map);
 
