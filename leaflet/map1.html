@@ -67,11 +67,12 @@
       // Listen for a click event on the Map
       map.on('click', onMapClick);
 
-// create buildings variable for overlay
+// create variables for overlay
       var buildings;
+      var myDataVariable;
 
-      //Load a geojson file from an external file
-      $.getJSON("buildings.json", function(json) {
+      //Load a geojson files from an external file
+      $.getJSON("buildings.json" + "BikeLayer.json", function(json) {
 
         // add geojson layer to map after file is loaded
         buildings = L.geoJson(json, {
@@ -83,7 +84,8 @@
         }
       );
       // Add Layer menu for buildings
-      layerMenu.addOverlay(buildings,"Buildings")
+      layerMenu.addOverlay(buildings,"Buildings" + bikes, "Bikes")
+      myDataVariable = L.geoJson(data).addTo(map);
       });
 
 
