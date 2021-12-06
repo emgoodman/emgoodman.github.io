@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <!-- Add Leaflet JavaScript Library -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script>
+
 
     //Wait for the doc to fully load before running JavaScript
       $(document).ready( function() {}
+
       // Create a variable to hold map element, give initial settings to <map>
       //put in the coordinates you want to show
       var map = l.map('map', {center: [39.743218, -105.004568], zoom: 14});
@@ -60,10 +65,10 @@
       //Load a geojson file from an external file
       $.getJSON("buildings.json"), function(data) {
         // add geojson layer to map after file is loaded
-        L.geoJason(data, {
+        L.geoJson(data, {
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
-                            "<br>Building Height: " + feature.properties.BLDG_HEIGHT +
+                            "<br>Building Height: " + feature.properties.BLDG_HEIGH +
                             "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
           }
         }
