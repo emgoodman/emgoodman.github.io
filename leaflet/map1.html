@@ -6,12 +6,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <!-- Add Leaflet JavaScript Library -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
-  </head>
-  <body>
-
-    <div id="map" style="width: 705px; height: 375px"></div>
-
     <script>
+
+    //Wait for the doc to fully load before running JavaScript
+      $(document).ready( function() {}
       // Create a variable to hold map element, give initial settings to <map>
       //put in the coordinates you want to show
       var map = l.map('map', {center: [39.743218, -105.004568], zoom: 14});
@@ -33,8 +31,50 @@
             [39.748473, -105.002487], [39.740283, -104.999037]],
             {color: 'blue', weight: 4}).addTo(map);
 
+      // Bind popup to Data Point object
+      myDatapoint.bindPopup("This is Auraria Library.");
+
+      // Bind popup to data point object
+      myDataPoint.bindPopup("<h3>Auraria Library</h3><p>Denver, CO<br>Information about Auraria Library.</p>");
+
+      // Bind popup to area object
+      myArea.bindPopup("Auraria Campus");
+
+      // Create a function to return lat and lon from a Point
+      var popup = L.popup();
+
+      map.on('click', onMapClick)
+
+      //Write a function to set properties of the bindPopup
+      function onMapClick(e) {
+         popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+        console.log("Clicked on the map");
+      }
+
+      // Listen for a click event on the Map
+      map.on('click', onMapClick);
+
+      //Load a geojson file from an external file
+      $.getJSON("buildings.json"), function(data) {
+        // add geojson layer to map after file is loaded
+        L.geoJason(data).addTo(map);
+      });
+
+
+      // Closing for the document.ready function
+    });
+
 
 
     </script>
+  </head>
+  <body>
+
+    <div id="map" style="width: 705px; height: 375px"></div>
+
+
   </body>
 </html>
