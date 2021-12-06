@@ -61,8 +61,7 @@
       map.on('click', onMapClick);
 
       //Load a geojson file from an external file
-      $.getJSON("buildings.json"), function(data) {
-
+      $.getJSON("buildings.json", function(data) {
 
         // add geojson layer to map after file is loaded
         L.geoJson(data, {
