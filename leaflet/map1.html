@@ -24,7 +24,10 @@
       var defaultBase = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
                                     {attribution: '© OpenStreetMap' }).addTo(map);
 
-      var layerMenu = L.control.layers(overlays).addTo(map);
+      var basemaps = { "Default Basemap:", defaultBase };
+      var overlaymaps = { };
+      var layerMenu = L.control.layers(basemaps,overlapmaps).addTo(map);
+
 
       // Create area feature for campus, style and add to map
         var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
