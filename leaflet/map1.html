@@ -21,7 +21,7 @@
       var map = L.map('map', {center: [39.743218, -105.004568], zoom: 14});
 
       // add OpenStreetMap tile layer to map element
-      var defaultBase = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+      var defaultBase = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
                                     {attribution: '© OpenStreetMap' }).addTo(map);
 
       // Create area feature for campus, style and add to map
