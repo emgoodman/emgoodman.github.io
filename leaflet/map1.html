@@ -76,7 +76,7 @@
       $.getJSON("buildings.json", function(json) {
 
         // add geojson layer to map after file is loaded
-        bikes = L.geoJson(data).addTo(map);
+        bikes = L.geoJson(json).addTo(map);
         buildings = L.geoJson(json, {
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
