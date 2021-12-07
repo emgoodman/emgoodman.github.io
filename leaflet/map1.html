@@ -79,7 +79,10 @@
             layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
                             "<br>Building Height: " + feature.properties.BLDG_HEIGH +
                             "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
-          }
+
+//Add layer menu for buildings
+                            layerMenu.addOverlay(buildings,"Buildings")
+  }
         })
       });
 
@@ -94,11 +97,6 @@
       layerMenu.addOverlay(bikes, "Citi Bikes")
 });
 
-
-      // Add Layer menu for buildings
-      layerMenu.addOverlay(buildings,"Buildings")
-      
-      });
 
 
     </script>
