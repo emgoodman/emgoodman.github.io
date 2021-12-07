@@ -4,57 +4,39 @@
     <title>My First Leaflet Map!</title>
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
-
     <!-- Add Leaflet JavaScript Library -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script
     src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script>
-
-
     //Wait for the doc to fully load before running JavaScript
       $(document).ready( function() {
-
       // Create a variable to hold map element, give initial settings to <map>
       //put in the coordinates you want to show
       var map = L.map('map', {center: [39.743218, -105.004568], zoom: 14});
-
       // add OpenStreetMap tile layer to map element
       var defaultBase = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png',
                                     {attribution: '© OpenStreetMap' }).addTo(map);
-
       var overlaymaps = { };
       var layerMenu = L.control.layers(overlaymaps).addTo(map);
-
-
       // Create area feature for campus, style and add to map
         var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
                               	[39.748473, -105.002487], [39.740283, -104.999037]],
                               	{color: 'blue', weight: 4}).addTo(map);
-
       // Creat point feature for Auraria Library
         var myDataPoint = L.marker([39.743119, -105.002959]).addTo(map);
-
       // Create area feature for campus, style and add to Map
         var myArea = L.polygon([[39.740652, -105.010233], [39.743218, -105.011864],
             [39.748473, -105.002487], [39.740283, -104.999037]],
             {color: 'blue', weight: 4}).addTo(map);
-
         layerMenu.addOverlay(myArea, "Auraria Campus");
         layerMenu.addOverlay(myDataPoint, "Auraria Library");
-
-
       // Bind popup to data point object
       myDataPoint.bindPopup("<h3>Auraria Library</h3><p>Denver, CO<br>Information about Auraria Library.</p>");
-
       // Bind popup to area object
       myArea.bindPopup("Auraria Campus");
-
       // Create a function to return lat and lon from a Point
       var popup = L.popup();
-
-
       //Write a function to set properties of the bindPopup
       function onMapClick(e) {
          popup
@@ -63,67 +45,40 @@
         .openOn(map);
         console.log("Clicked on the map");
       }
-
       // Listen for a click event on the Map
       map.on('click', onMapClick);
-
-// create variables for overlays
+// create buildings variable for overlay
       var buildings;
-
-      //Load a geojson files from an external file
-      $.getJSON("buildings.json", function(data) {
-
+      //Load a geojson file from an external file
+      $.getJSON("buildings.json", function(json) {
         // add geojson layer to map after file is loaded
-        buildings = L.geoJson(data, {
+        buildings = L.geoJson(json, {
           onEachFeature: function (feature, layer) {
             layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
                             "<br>Building Height: " + feature.properties.BLDG_HEIGH +
                             "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
-
-//Add layer menu for buildings
-                            layerMenu.addOverlay(buildings,"Buildings")
-  }
-        })
-      });
-
-//add bike variables
-      var bikes;
-
-      //add bike geoson layer
-      $.getJSON("BikeLayer.json",function(data){
-
-     // add GeoJSON layer to the map once the file is loaded
-	    bikes = L.geoJson(data).addTo(map);
-      layerMenu.addOverlay(bikes, "Citi Bikes")
-});
-
-
-
-
+          }
+        }
+      );
+      // Add Layer menu for buildings
+      layerMenu,addOverlay(buildings,"Buildings")
+      layerMenu.addOverlay(buildings,"Buildings")
       });
 
 
+      // Closing for the document.ready function
+    });
     </script>
-
   <!-- web map content -->
     <style>
       html, body { height: 100%; }
       #map { height: 80%; width: 95%; }
       #map-title { width: 100%; }
-      h1 {color: black;
-          font-family: Recoleta;
-          align: center;
-          }
+      h1 {color: blue;}
     </style>
-
-
   </head>
   <body>
-
-    <div id="map-title"><h1>Metropolitan State University of Denver, Colorado</h1></div>
+    <div id="map-title"><h1>Map Title Here</h1></div>
     <div id="map"></div>
-
-
-
   </body>
 </html>
