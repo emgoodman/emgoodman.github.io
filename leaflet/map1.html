@@ -69,7 +69,6 @@
 
 // create variables for overlays
       var buildings;
-      var bikes;
 
       //Load a geojson files from an external file
       $.getJSON("buildings.json", function(data) {
@@ -82,10 +81,14 @@
                             "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
           }
         }
-      );
+      });
+
+//add bike variables
+      var bikes;
 
       //add bike geoson layer
       $.getJSON("BikeLayer.json",function(data){
+
      // add GeoJSON layer to the map once the file is loaded
 	    bikes = L.geoJson(data).addTo(map);
 });
@@ -109,7 +112,7 @@
       #map-title { width: 100%; }
       h1 {color: black;
           font-family: Recoleta;
-          align: center; 
+          align: center;
           }
     </style>
 
@@ -117,7 +120,7 @@
   </head>
   <body>
 
-    <div id="map-title"><u><h1>Metropolitan State University of Denver, Colorado</h1></u></div>
+    <div id="map-title"><h1>Metropolitan State University of Denver, Colorado</h1></div>
     <div id="map"></div>
 
 
