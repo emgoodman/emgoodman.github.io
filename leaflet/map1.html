@@ -71,11 +71,12 @@
                             "<br>Ground Elevation: " + feature.properties.GROUND_ELE);
 
   }
-        })
+}).addTo(map)
+
         //Add layer menu for buildings
             layerMenu.addOverlay(buildings,"Buildings")
       });
-      .addTo(map);
+
 
       //add skate overlay variable
       var skate;
