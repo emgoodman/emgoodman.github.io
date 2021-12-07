@@ -78,17 +78,17 @@
       });
 
 
-      //add skate overlay variable
-      var skate;
+      //add parks overlay variable
+      var parks;
 
       //add bike geojson layer
-      $.getJSON("skate.json",function(data){
+      $.getJSON("parks.json",function(data){
 
      // add GeoJSON layer to the map once the file is loaded
-	    skate = L.geoJson(data).addTo(map);
+	    parks = L.geoJson(data).addTo(map);
 
-      //add layer menu for skate parks
-      layerMenu.addOverlay(skate, "Skate Parks")
+      //add layer menu for parks
+      layerMenu.addOverlay(parks, "Parks")
 });
 
 
