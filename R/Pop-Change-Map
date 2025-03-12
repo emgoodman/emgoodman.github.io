@@ -24,4 +24,24 @@ invisible(
         libs, library,
         character.only = TRUE
     )
+# Download GHSL DATA
+#-------------------
+urls <- c(
+   "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2025_GLOBE_R2023A_54009_100/V1-0/GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0.zip",
+   "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E1985_GLOBE_R2023A_54009_100/V1-0/GHS_POP_E1985_GLOBE_R2023A_54009_100_V1_0.zip"
+)
+
+options(timeout = 300)
+
+for (url in urls) {
+    download.file(
+        url = url,
+        path = getwd(),
+        destfile = basename(url)
+    )
+}
+
+lapply(
+    basename(urls),
+    unzip
 )
