@@ -24,7 +24,7 @@ invisible(
         libs, library,
         character.only = TRUE
     )
-# Download GHSL DATA
+# Download GHSL Data
 #-------------------
 urls <- c(
    "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_POP_GLOBE_R2023A/GHS_POP_E2025_GLOBE_R2023A_54009_100/V1-0/GHS_POP_E2025_GLOBE_R2023A_54009_100_V1_0.zip",
@@ -44,4 +44,17 @@ for (url in urls) {
 lapply(
     basename(urls),
     unzip
+)
+
+# Load GHSL Data
+#---------------
+file_names <- list.files(
+    path = getwd(),
+    pattern = "tif$",
+    full.names = T
+)
+
+pop_rasters <- lapply(
+    file_names,
+    terra::rast
 )
