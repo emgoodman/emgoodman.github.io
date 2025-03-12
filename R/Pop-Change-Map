@@ -1,0 +1,27 @@
+# Population Change Map #
+
+libs <- c(
+  "tidyverse", "terra",
+  "giscoR"
+  )
+
+installed_libs <- libs %in% rownames(
+  installed.packages()
+  )
+
+installed_libs <- libs %in% rownames(
+    installed.packages()
+)
+
+if (any(installed_libs == F)) {
+    install.packages(
+        libs[!installed_libs]
+    )
+}
+
+invisible(
+    lapply(
+        libs, library,
+        character.only = TRUE
+    )
+)
